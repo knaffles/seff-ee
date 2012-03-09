@@ -11,11 +11,22 @@
 	<div class="row">
 		<div class="span7">
 			<div class="interior-images">
-				<!-- This needs a bug fix - http://expressionengine.com/bug_tracker/bug/17450 -->
-				{if entry_large_image_1}
+				<!-- This needed a bug fix - http://expressionengine.com/bug_tracker/bug/17450 -->
+				{if entry_image_1_link}
+					<a href="{entry_image_1_link}" target="_blank">{entry_medium_image_1 wrap="image"}</a>
+				{if:elseif entry_large_image_1}
 					<a href="{entry_large_image_1}{url}{/entry_large_image_1}">{entry_medium_image_1 wrap="image"}</a>
 				{if:else}
 					{entry_medium_image_1 wrap="image"}
+				{/if}
+				{if entry_medium_image_2}
+					{if entry_image_2_link}
+						<a href="{entry_image_2_link}" target="_blank">{entry_medium_image_2 wrap="image"}</a>
+					{if:elseif entry_large_image_2}
+						<a href="{entry_large_image_2}{url}{/entry_large_image_2}">{entry_medium_image_2 wrap="image"}</a>
+					{if:else}
+						{entry_medium_image_2 wrap="image"}
+					{/if}
 				{/if}
 			</div>
 		</div>
