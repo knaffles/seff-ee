@@ -33,11 +33,11 @@
 	</div>
 </div>
 <div class="container">
-	{exp:channel:entries channel="portfolio_entry" limit="1" category="1"}
+	{exp:channel:entries channel="portfolio_entry" limit="1" category="1" status="not Closed"}
 	<div class="page-header">
 		<h1>{title}</h1>
 	</div>
-{embed="site/interior-nav-publishing"}
+	{embed="site/interior-nav-publishing" entry_url="{url_title}"}
 	<div class="row">
 		<div class="span7">
 			<div class="interior-images">

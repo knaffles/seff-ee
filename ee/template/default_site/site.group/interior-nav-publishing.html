@@ -1,5 +1,13 @@
+	<div id="prev-next" class="clearfix pull-right">
+		{exp:channel:next_entry category="1" url_title="{embed:entry_url}" status="not Closed"}
+		<a href="{path='publishing/index'}">PREV</a>
+		{/exp:channel:next_entry}
+		{exp:channel:prev_entry category="1" url_title="{embed:entry_url}" status="not Closed"}
+		<a href="{path='publishing/index'}">NEXT</a>
+		{/exp:channel:prev_entry}
+	</div>
 	<div id="interior-carousel-thumbs" class="clearfix">
-		{exp:channel:entries channel="portfolio_entry" category="1" dynamic="no"}
+		{exp:channel:entries channel="portfolio_entry" category="1" dynamic="no" status="not Closed"}
 		<div class="item"><a href="{url_title_path='publishing'}">{entry_thumbnail wrap="image"}</a></div>
 		{/exp:channel:entries}
 	</div>

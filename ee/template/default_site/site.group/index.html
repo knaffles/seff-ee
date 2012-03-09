@@ -1,4 +1,4 @@
-{embed="site/header" entry_title="Home"}
+{embed="site/header"}
 <body>
 <div class="navbar">
 	<div class="navbar-inner">
@@ -40,11 +40,10 @@
 	<div id="home-carousel" class="carousel">
 		<!-- Carousel items -->
 		<div class="carousel-inner">
-			{exp:channel:entries channel="portfolio_entry"}
-			{if entry_show_on_homepage == "Yes"}
+			{exp:channel:entries channel="portfolio_entry" status="Homepage featured"}
+			<!-- {categories limit="1"}{category_url_title}/{url_title}{/categories}"><br /> -->
 			<!-- use category tags to generate link to detail page -->
-			<div class="item{if count == 1} active{/if}">{entry_homeimage wrap="image"}</div>
-			{/if}
+			<div class="item{if count == 1} active{/if}"><a href="/{categories limit="1"}{category_url_title}/{url_title}{/categories}">{entry_homeimage wrap="image"}</a></div>
 			{/exp:channel:entries}
 		</div>
 		<!-- Carousel nav -->
@@ -52,10 +51,8 @@
 		<a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
 	</div>
 	<div id="home-carousel-thumbs" class="clearfix">
-		{exp:channel:entries channel="portfolio_entry"}
-		{if entry_show_on_homepage == "Yes"}
+		{exp:channel:entries channel="portfolio_entry" status="Homepage featured"}
 		<div class="item{if count == 1} active{/if}"><a href="#">{entry_thumbnail wrap="image"}</a></div>
-		{/if}
 		{/exp:channel:entries}
 	</div>
 	
