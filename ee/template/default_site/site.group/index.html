@@ -1,3 +1,4 @@
+{if segment_2}{redirect="404"}{/if}
 {embed="site/header"}
 <body>
 {embed="site/topnav"}
@@ -10,8 +11,6 @@
 		<!-- Carousel items -->
 		<div class="carousel-inner">
 			{exp:channel:entries channel="portfolio_entry" status="Homepage featured"}
-			<!-- {categories limit="1"}{category_url_title}/{url_title}{/categories}"><br /> -->
-			<!-- use category tags to generate link to detail page -->
 			<div class="item{if count == 1} active{/if}"><a href="/{categories limit="1"}{category_url_title}/{url_title}{/categories}">{entry_homeimage wrap="image"}</a></div>
 			{/exp:channel:entries}
 		</div>

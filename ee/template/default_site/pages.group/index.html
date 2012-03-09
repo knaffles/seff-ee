@@ -1,0 +1,38 @@
+{exp:channel:entries channel="pages" limit="1" {if segment_2}require_entry="yes"{/if}}
+{if no_results}{redirect="404"}{/if}
+{embed="site/header" entry_title="{title}"}
+<body class="page">
+{embed="site/topnav"}
+<div class="container">	
+	<div class="page-header">
+		<h1>{title}</h1>
+	</div>
+	<div class="row">
+		<div class="span7">
+			{if pages_image}
+			<div class="interior-images">
+				{pages_image wrap="image"}
+			</div>
+			{/if}
+		</div>
+		<div class="span5">
+			{pages_blurb}
+			{if page_uri == "/contact/"}
+			{exp:email:contact_form user_recipients="no" recipients="knaffles@gmail.com" charset="utf-8"}
+			<label for="name">name</label>
+			<input type="text" id="name" name="name" size="50" maxlength="35" />
+			<label for="from">email</label>
+			<input type="text" id="from" name="from" size="50" maxlength="35" />
+			<label for="phone">phone</label>
+			<input type="text" id="phone" name="message[]" size="50" />
+			<input type="hidden" name="subject" value="Email from betyseff.com" />
+			<label for="message">comment</label>
+			<textarea id="message" name="message[]" rows="7" cols="60"></textarea>
+			<p><br /><button type="submit" class="btn" />Submit</button></p>
+			{/exp:email:contact_form}
+			{/if}
+		</div>
+
+	</div>
+{/exp:channel:entries}
+{embed="site/bottom"}

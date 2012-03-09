@@ -1,4 +1,4 @@
-{exp:channel:entries channel="portfolio_entry" limit="1" category="1" status="not Closed" {if segment_2}require_entry="yes"{/if}}
+{exp:channel:entries channel="portfolio_entry" limit="1" category="4" status="not Closed" {if segment_2}require_entry="yes"{/if}}
 {if no_results}{redirect="404"}{/if}
 {embed="site/header" entry_title="{title}"}
 <body class="publishing">
@@ -7,7 +7,7 @@
 	<div class="page-header">
 		<h1>{title}</h1>
 	</div>
-	{embed="publishing/interior-nav" entry_url="{url_title}"}
+	{embed="site/interior-nav-publishing" entry_url="{url_title}"}
 	<div class="row">
 		<div class="span7">
 			<div class="interior-images">
