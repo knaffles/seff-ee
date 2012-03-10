@@ -1,12 +1,13 @@
 {exp:channel:entries channel="pages" limit="1" {if segment_2}require_entry="yes"{/if}}
 {if no_results}{redirect="404"}{/if}
 {embed="site/header" entry_title="{title}"}
-<body class="page">
+<body class="{url_title}">
 {embed="site/topnav"}
 <div class="container">	
 	<div class="page-header">
-		<h1>{title}</h1>
+		<h1><a href="/">Betsy Seff</a></h1>
 	</div>
+	<h2>{title}</h2>
 	<div class="row">
 		<div class="span7">
 			{if pages_image}
